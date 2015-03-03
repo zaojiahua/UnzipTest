@@ -40,11 +40,12 @@ bool HelloWorld::init()
 bool HelloWorld::unZipFiles(const char *destName, const char *srcName)
 {
 	DJZipArchive * djzip = new DJZipArchive();
+    
     if (!djzip->unzipOpenFile(srcName))
     {
         log("cant't open %s",srcName);
     }
     
-    //可以解压带目录的 带密码的
+    //可以解压带目录的
     return djzip->unzipFileToAndOverWrite(destName,true);
 }
